@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MenuItems } from '../data/MenuItems';
 
-import './header.css';
+import './headerstyle.css';
 
 class Header extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class Header extends React.Component {
   changeClicked() {
     this.setState({ clicked: !this.state.clicked });
   }
-
+  
   render() {
     return (
       <nav className="header-navbar">
@@ -35,7 +35,7 @@ class Header extends React.Component {
           {MenuItems.map((item) => {
             return (
               <li key={item.id}>
-                <Link to={item.path} className="navbar-link">
+                <Link to={item.path} className="navbar-link" onClick={this.changeClicked.bind(this)}>
                   {item.title}
                 </Link>
               </li>
