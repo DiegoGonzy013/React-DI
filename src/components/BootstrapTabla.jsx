@@ -1,6 +1,5 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
-import { TablaItems } from '../data/TablaItems';
 
 class BootstrapTabla extends React.Component {
   constructor(props) {
@@ -11,8 +10,6 @@ class BootstrapTabla extends React.Component {
     return (<Table striped bordered hover>
       <thead>
         <tr>
-        {TableItems.map((item) => {
-                
           <th>#</th>
           <th>First Name</th>
           <th>Last Name</th>
