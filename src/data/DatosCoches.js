@@ -10,18 +10,18 @@ export const TitulosCoches =
       matricula: '1111 fff',
       marca: 'Peugeot',
       modelo: 'Partner',
-      color: 'rojo',
+      color: 'gris',
       imagen:
-        'https://www.mercadoracing.org/imagenes-anuncios/26/419711/mitsubishi-evo-vii-rs.jpg',
+        'https://www.autofacil.es/wp-content/uploads/2021/01/nuevo-peugeot-partner-2021-1_g.jpg',
       descripción: 'Un coche diferente',
     },
     {
       matricula: '1111 ggg',
-      marca: 'Hyundai',
-      modelo: 'ix35',
-      color: 'verde',
+      marca: 'Honda',
+      modelo: 'Civic Type R GT',
+      color: 'rojo',
       imagen:
-        'https://www.mercadoracing.org/imagenes-anuncios/26/419711/mitsubishi-evo-vii-rs.jpg',
+        'https://www.autonocion.com/wp-content/uploads/2018/03/Prueba-Honda-Civic-Type-R-GT-2.0-VTEC-Turbo-1-930x620.jpg',
       descripción: 'Un coche malo',
     },
     {
@@ -39,7 +39,7 @@ export const TitulosCoches =
       modelo: 'Impreza',
       color: 'azul',
       imagen:
-        'https://www.mercadoracing.org/imagenes-anuncios/26/419711/mitsubishi-evo-vii-rs.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/e/e5/Washauto06_subaru_impreza.jpg',
       descripción: 'Un coche meh',
     },
   ]
