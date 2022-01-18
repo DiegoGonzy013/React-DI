@@ -1,6 +1,6 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
-import { DatosCoches } from '../data/DatosCoches';
+import { Card, Container, Table, Row, Col } from 'react-bootstrap';
+import { TitulosCoches, DatosCoches } from '../data/DatosCoches';
 
 class Coches extends React.Component {
   constructor(props) {
@@ -9,32 +9,51 @@ class Coches extends React.Component {
 
   render() {
     return (
-      <div className="main-state">
+      <div className="main-site">
         <h1>Coches</h1>
-        <Table responsive striped class="table">
-          <thead>
-            <tr>
-              <th>{TitulosCoches.id}</th>
-              <th>{TitulosCoches.field1}</th>
-              <th>{TitulosCoches.field2}</th>
-              <th>{TitulosCoches.field3}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              {DatosCoches.map((item) => {
-                return (
+        <Container>
+          <Row>
+            <Col lg={8} md={6}>
+              <Table responsive striped>
+                <thead>
                   <tr>
-                    <td>{item.matricula}</td>
-                    <td>{item.marco}</td>
-                    <td>{item.modelo}</td>
-                    <td>{item.color}</td>
+                    <th>{TitulosCoches.id}</th>
+                    <th>{TitulosCoches.field1}</th>
+                    <th>{TitulosCoches.field2}</th>
+                    <th>{TitulosCoches.field3}</th>
                   </tr>
-                );
-              })}
-            </tr>
-          </tbody>
-        </Table>
+                </thead>
+                <tbody>
+                    {DatosCoches.map((item) => {
+                      return (
+                        <tr>
+                          <td>{item.matricula}</td>
+                          <td>{item.marco}</td>
+                          <td>{item.modelo}</td>
+                          <td>{item.color}</td>
+                        </tr>
+                      );
+                    })}
+                </tbody>
+              </Table>
+            </Col>
+            <Col lg={4} md={6}>
+              <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={DatosCoches[2].imagen} />
+                <Card.Body>
+                  <Card.Title>
+                    {DatosCoches[2].marca} {DatosCoches[2].modelo}
+                  </Card.Title>
+                  <Card.Text>
+                    Matrícula: {DatosCoches[2].matricula}
+                    <p />
+                    {DatosCoches[2].descripción}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
