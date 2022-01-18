@@ -5,6 +5,13 @@ import { TitulosCoches, DatosCoches } from '../data/DatosCoches';
 class Coches extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      clicked: false,
+    };
+  }
+
+  changeClicked() {
+    this.setState({ clicked: !this.state.clicked });
   }
 
   render() {
@@ -39,6 +46,10 @@ class Coches extends React.Component {
             </Col>
             <Col lg={4} md={6}>
               <Card style={{ width: '18rem' }}>
+              {DatosCoches.map((item) => {
+                      return (
+                        <div onClick={this.changeClicked.bind(this)}/>
+                        );})}
                 <Card.Img variant="top" src={DatosCoches[2].imagen} />
                 <Card.Body>
                   <Card.Title>
@@ -50,6 +61,7 @@ class Coches extends React.Component {
                     {DatosCoches[2].descripción}
                   </Card.Text>
                 </Card.Body>
+                      
               </Card>
             </Col>
           </Row>
