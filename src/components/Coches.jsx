@@ -28,7 +28,7 @@ class Coches extends React.Component {
                       return (
                         <tr>
                           <td>{item.matricula}</td>
-                          <td>{item.marco}</td>
+                          <td>{item.marca}</td>
                           <td>{item.modelo}</td>
                           <td>{item.color}</td>
                         </tr>
