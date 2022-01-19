@@ -43,5 +43,14 @@ export const GranPremios =
         'https://motosprint.com/blog/wp-content/uploads/2017/11/Motosprint-Racing-Sport-Motocicletas-Motos-Moto-Catalu%C3%B1a-Mundial-MotoGP-Montmelo-MotoGP-PORTADA.jpg',
       descripción: 'La carrera en casa, un circuito siempre emocionante',
     },
+    {
+      Circuito: 'Yeda',
+      Pais: 'Arabia Saudi',
+      Longitud: ' 6.175 km',
+      Tipo: 'Urbano',
+      imagen:
+        'https://s1.eestatic.com/2021/10/19/elbernabeu/620700027_212142456_864x486.jpg',
+      descripción: 'El cicuito con mas curvas del campeonato, y tmb el segundo mas rapido',
+    },
   ]
  

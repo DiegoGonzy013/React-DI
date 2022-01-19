@@ -23,7 +23,7 @@ class Coches extends React.Component {
             <Col lg={8} md={6}>
               <Table responsive striped>
                 <thead>
-                  <tr onClick={this.changeClicked.bind(this)}>
+                  <tr >
                     <th>{GranPremios.id} </th>
                     <th>{GranPremios.field1}</th>
                     <th>{GranPremios.field2}</th>
@@ -33,7 +33,7 @@ class Coches extends React.Component {
                 <tbody>
                     {DatosCircuitos.map((item) => {
                       return (
-                        <tr>
+                        <tr onClick={this.changeClicked.bind(this)}>
                           <td>{item.Circuito}</td>
                           <td>{item.Pais}</td>
                           <td>{item.Longitud}</td>
@@ -46,15 +46,15 @@ class Coches extends React.Component {
             </Col>
             <Col lg={4} md={6}>
               <Card style={{ width: '16rem' }}>
-                <Card.Img variant="top"  src={DatosCircuitos[2].imagen} />
+                <Card.Img variant="top" src={DatosCircuitos[1].imagen} onClick={this.changeClicked.bind(this)} />
                 <Card.Body>
                   <Card.Title>
-                    {DatosCircuitos[2].Pais} {DatosCircuitos[2].Circuito}
+                    {DatosCircuitos[1].Pais} ==== {DatosCircuitos[1].Circuito}
                   </Card.Title>
                   <Card.Text>
-                    Longitud: {DatosCircuitos[2].Longitud}
+                    Longitud: {DatosCircuitos[1].Longitud}
                     <p />
-                    {DatosCircuitos[2].descripción}
+                    {DatosCircuitos[1].descripción}
                   </Card.Text>
                 </Card.Body>
                       
