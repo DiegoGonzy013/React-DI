@@ -11,7 +11,7 @@ class Coches extends React.Component {
   }
 
   changeClicked() {
-    this.setState({ clicked: !this.state.clicked });
+    this.setState({ clicked: this.state.clicked });
   }
 
   render() {
@@ -43,18 +43,18 @@ class Coches extends React.Component {
                     })}
                 </tbody>
               </Table>
-            </Col>
+            </Col> 
             <Col lg={4} md={6}>
               <Card style={{ width: '16rem' }}>
-                <Card.Img variant="top" src={DatosCircuitos[1].imagen} onClick={this.changeClicked.bind(this)} />
+                <Card.Img variant="top" src={DatosCircuitos[4].imagen} className={this.state.clicked} />
                 <Card.Body>
                   <Card.Title>
-                    {DatosCircuitos[1].Pais} ==== {DatosCircuitos[1].Circuito}
+                    {DatosCircuitos[4].Pais} - {DatosCircuitos[4].Circuito}
                   </Card.Title>
                   <Card.Text>
-                    Longitud: {DatosCircuitos[1].Longitud}
-                    <p />
-                    {DatosCircuitos[1].descripción}
+                    Longitud: {DatosCircuitos[4].Longitud}
+                    <p/>
+                    {DatosCircuitos[4].descripción}
                   </Card.Text>
                 </Card.Body>
                       

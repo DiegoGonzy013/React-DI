@@ -50,7 +50,7 @@ export const GranPremios =
       Tipo: 'Urbano',
       imagen:
         'https://s1.eestatic.com/2021/10/19/elbernabeu/620700027_212142456_864x486.jpg',
-      descripción: 'El cicuito con mas curvas del campeonato, y tmb el segundo mas rapido',
+      descripción: 'El circuito con mas curvas del campeonato, y tambien el segundo mas rapido',
     },
   ]
  
