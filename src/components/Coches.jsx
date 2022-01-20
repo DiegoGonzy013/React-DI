@@ -6,7 +6,7 @@ class Coches extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      CircuitoClick: DatosCircuitos[0].circuito,
+      CircuitoClick: DatosCircuitos[0].Circuito,
       PaisClick: DatosCircuitos[0].Pais,
       LongitudClick: DatosCircuitos[0].Longitud,
       TipoClick: DatosCircuitos[0].Tipo,
@@ -16,7 +16,7 @@ class Coches extends React.Component {
   }
   changeData(item) {
     this.setState({ 
-      CircuitoClick: item.circuito,
+      CircuitoClick: item.Circuito,
       PaisClick: item.Pais,
       LongitudClick: item.Longitud,
       TipoClick:item.Tipo,
@@ -62,7 +62,7 @@ class Coches extends React.Component {
                   src={this.state.imagenClick}/>
                 <Card.Body>
                   <Card.Title>
-                    {this.state.PaisClick} - {this.state.CircuitoClick}
+                    {this.state.PaisClick} = {this.state.CircuitoClick}
                   </Card.Title>
                   <Card.Text>
                     Longitud: {this.state.LongitudClick}
