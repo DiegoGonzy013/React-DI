@@ -6,8 +6,12 @@ class Coches extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clicked: false,
-      //listaF1: this.changeData(props.DatosCircuitos)
+      CircuitoPulsado: DatosCircuitos[0].circuito,
+      PaisPulsado: DatosCircuitos[0].Pais,
+      LongitudPulsado: DatosCircuitos[0].Longitud,
+      TipoPulsado: DatosCircuitos[0].Tipo,
+      imagenPulsado: DatosCircuitos[0].imagen,
+      descripcionPulsado: DatosCircuitos[0].descripción,
     };
   }
   changeData() {

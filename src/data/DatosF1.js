@@ -3,7 +3,7 @@ export const GranPremios =
     id: 'Circuito',
     field1: 'Pais',
     field2: 'Longitud',
-    field3: 'Fecha',
+    field3: 'Tipo',
   };
   export const DatosCircuitos=[
     {
