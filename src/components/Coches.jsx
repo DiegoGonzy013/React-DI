@@ -6,32 +6,24 @@ class Coches extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      CircuitoPulsado: DatosCircuitos[0].circuito,
-      PaisPulsado: DatosCircuitos[0].Pais,
-      LongitudPulsado: DatosCircuitos[0].Longitud,
-      TipoPulsado: DatosCircuitos[0].Tipo,
-      imagenPulsado: DatosCircuitos[0].imagen,
-      descripcionPulsado: DatosCircuitos[0].descripción,
+      CircuitoClick: DatosCircuitos[0].circuito,
+      PaisClick: DatosCircuitos[0].Pais,
+      LongitudClick: DatosCircuitos[0].Longitud,
+      TipoClick: DatosCircuitos[0].Tipo,
+      imagenClick: DatosCircuitos[0].imagen,
+      descripcionClick: DatosCircuitos[0].descripción,
     };
   }
-  changeData() {
-    this.setState({ clicked: this.state.clicked });
+  changeData(item) {
+    this.setState({ 
+      CircuitoClick: item.circuito,
+      PaisClick: item.Pais,
+      LongitudClick: item.Longitud,
+      TipoClick:item.Tipo,
+      imagenClick: item.imagen,
+      descripcionClick: item.descripción
+    });
   }
-  /*changeData(DatosCircuitos) {
-    const lista = [];
-    this.setState({ clicked: this.state.clicked });
-    for (let i = 0; i < DatosCircuitos.length; i++) {
-      <div>
-      Circuito ={DatosCircuitos[i].Circuito}
-      Pais={DatosCircuitos[i].Pais}
-      Longitud={DatosCircuitos[i].Longitud}
-      Tipo={DatosCircuitos[i].Tipo}
-      imagen={DatosCircuitos[i].imagen}
-      descripcion={DatosCircuitos[i].descripcion}
-      </div>
-    }
-    return lista;
-  }*/
 
   render() {
     return (
@@ -52,7 +44,7 @@ class Coches extends React.Component {
                 <tbody>
                   {DatosCircuitos.map((item) => {
                     return (
-                      <tr onClick={this.changeData.bind(this)}>
+                      <tr onClick={()=>this.changeData(item)}>
                         <td>{item.Circuito}</td>
                         <td>{item.Pais}</td>
                         <td>{item.Longitud}</td>
@@ -67,17 +59,15 @@ class Coches extends React.Component {
               <Card style={{ width: '16rem' }}>
                 <Card.Img
                   variant="top"
-                  src={DatosCircuitos[4].imagen}
-                  className={this.state.clicked}
-                />
+                  src={this.state.imagenClick}/>
                 <Card.Body>
                   <Card.Title>
-                    {DatosCircuitos[4].Pais} - {DatosCircuitos[4].Circuito}
+                    {this.state.PaisClick} - {this.state.CircuitoClick}
                   </Card.Title>
                   <Card.Text>
-                    Longitud: {DatosCircuitos[4].Longitud}
+                    Longitud: {this.state.LongitudClick}
                     <p />
-                    {DatosCircuitos[4].descripción}
+                    {this.state.descripcionClick}
                   </Card.Text>
                 </Card.Body>
               </Card>
