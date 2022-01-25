@@ -1,63 +1,60 @@
 import React from 'react';
-import { Container, Form ,Button,} from 'react-bootstrap';
+import { Container, Form, Button } from 'react-bootstrap';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = { user: '', password: '' };
     this.login = this.login.bind(this);
+    this.inputuser = React.createRef();
+    this.inputpass = React.createRef();
   }
 
   login() {
-    this.setstate({ user: 'Diego', password: '1234' });
-    console.log(`${this.state.user}ha hecho click`);
+    this.setstate({ 
+      user: this.inputuser.current.value, 
+      password: this.inputpass.current.value });
+      localStorage.setItem('user',this.inputuser.current.value);
+      localStorage.setItem('password',this.inputuser.current.value);
+    //console.log(`${this.state.user}submit`);
   }
   render() {
-    if(this.state !== null && this.state.user !== null){
-      return(
+    if (this.state !== null && 
+      this.state.user !== null &&
+      this.state.user !== '') {
+      return (
         <div className="main-state">
-            <h1>Bienvenido {this.state.user}!</h1>
+          <h1>Bienvenido a nuestra pagina web {this.state.user}!</h1>
         </div>
       );
-    }else{
-    return (
-      <div className="main-state">
-        <h1>Pedazo formulario mirmano</h1>
-        <Container>
-          <Form>
-            <fieldset disabled>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="disabledTextInput">
-                  Disabled input
-                </Form.Label>
-                <Form.Control
-                  id="disabledTextInput"
-                  placeholder="Disabled input"
-                />
+    } else {
+      return (
+        <div className="main-state">
+          <h1>Welcome!!!!</h1>
+          <Container>
+            <Form>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Nombre usuario:</Form.Label>
+                <Form.Control type="text" placeholder="Usuario" ref={this.inputuser}/>
+                <Form.Text className="text-muted" ref={this.inputuser}>
+                  We'll never share your email with anyone else.
+                </Form.Text>
               </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="disabledSelect">
-                  Disabled select menu
-                </Form.Label>
-                <Form.Select id="disabledSelect">
-                  <option>Disabled select</option>
-                </Form.Select>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" placeholder="Password" ref={this.inputpass} />
               </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Check
-                  type="checkbox"
-                  id="disabledFieldsetCheck"
-                  label="Can't check this"
-                />
+              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Check type="checkbox" label="Check me out" />
               </Form.Group>
-              <Button type="submit">Submit</Button>
-            </fieldset>
-          </Form>
-        </Container>
-      </div>
-    );
+              <Button variant="primary" type="submit" onclick={this.login}>
+                Submit
+              </Button>
+            </Form>
+          </Container>
+        </div>
+      );
+    }
   }
 }
-}
-
 export default Home;
