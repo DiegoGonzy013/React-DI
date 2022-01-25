@@ -19,7 +19,7 @@ class Home extends React.Component {
     //console.log(`${this.state.user}submit`);
   }
   componentDidUnmount(){
-    this.setState((user:localStorage.getItem('user'),password:localStorage.getItem('pass')));
+    this.setState(user:localStorage.getItem('user'),password:localStorage.getItem('pass'));
     localStorage.setItem('password',this.state.current.value); 
   }
   render() {
