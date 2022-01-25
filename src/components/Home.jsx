@@ -19,7 +19,7 @@ class Home extends React.Component {
     //console.log(`${this.state.user}submit`);
   }
   componentDidUnmount(){
-    localStorage.setItem('user',this.state.value);
+    this.setState((user:localStorage.getItem('user'),password:localStorage.getItem('pass')));
     localStorage.setItem('password',this.state.current.value); 
   }
   render() {
@@ -46,7 +46,7 @@ class Home extends React.Component {
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" ref={this.inputpass} />
+                <Form.Control type="password" placeholder="Pass" ref={this.inputpass} />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Check me out" />
