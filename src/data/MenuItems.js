@@ -6,7 +6,7 @@ import Coches from '../components/Coches';
 export const MenuItems = [
   {
     id: 1,
-    path: '/',
+    path: '/home',
     title: 'Home',
     component: Home,
   },
