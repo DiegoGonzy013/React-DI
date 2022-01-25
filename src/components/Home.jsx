@@ -18,6 +18,10 @@ class Home extends React.Component {
       localStorage.setItem('password',this.inputuser.current.value);
     //console.log(`${this.state.user}submit`);
   }
+  componentDidUnmount(){
+    localStorage.setItem('user',this.state.value);
+    localStorage.setItem('password',this.state.current.value); 
+  }
   render() {
     if (this.state !== null && 
       this.state.user !== null &&
@@ -35,8 +39,8 @@ class Home extends React.Component {
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Nombre usuario:</Form.Label>
-                <Form.Control type="text" placeholder="Usuario"/>
-                <Form.Text className="text-muted" ref={this.inputuser}>
+                <Form.Control type="text" placeholder="Usuario" ref={this.inputuser}/>
+                <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
                 </Form.Text>
               </Form.Group>
@@ -56,5 +60,10 @@ class Home extends React.Component {
       );
     }
   }
+  componentWillUnmount(){
+    localStorage.setItem('user',this.state.value);
+    localStorage.setItem('password',this.state.current.value); 
+  }
+  
 }
 export default Home;
