@@ -10,25 +10,19 @@ class Home extends React.Component {
 
   login() {
     this.setstate({ user: 'Diego', password: '1234' });
-    console.log(`${this.state.use}ha hecho click`);
+    console.log(`${this.state.user}ha hecho click`);
   }
   render() {
-    /*if(
-
-    ){
+    if(this.state !== null && this.state.user !== null){
       return(
-
-      );
-    }else{
-      return(
-      <div className="main-state">
-        <h1>Pedazo tabla mirmano</h1>
+        <div className="main-state">
+            <h1>Bienvenido {this.state.user}!</h1>
         </div>
       );
-    }*/
+    }else{
     return (
       <div className="main-state">
-        <h1>Pedazo tabla mirmano</h1>
+        <h1>Pedazo formulario mirmano</h1>
         <Container>
           <Form>
             <fieldset disabled>
@@ -64,4 +58,6 @@ class Home extends React.Component {
     );
   }
 }
+}
+
 export default Home;
