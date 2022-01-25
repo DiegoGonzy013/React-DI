@@ -35,7 +35,7 @@ class Home extends React.Component {
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Nombre usuario:</Form.Label>
-                <Form.Control type="text" placeholder="Usuario" ref={this.inputuser}/>
+                <Form.Control type="text" placeholder="Usuario"/>
                 <Form.Text className="text-muted" ref={this.inputuser}>
                   We'll never share your email with anyone else.
                 </Form.Text>
