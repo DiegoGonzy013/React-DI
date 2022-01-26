@@ -16,10 +16,11 @@ class Home extends React.Component {
       password: this.inputpass.current.value });
       localStorage.setItem('user',this.inputuser.current.value);
       localStorage.setItem('password',this.inputuser.current.value);
-    //console.log(`${this.state.user}submit`);
   }
   componentDidUnmount(){
-    this.setState(user:localStorage.getItem('user'),password:localStorage.getItem('pass'));
+    this.setState({
+      user: localStorage.getItem('user'),
+      password: localStorage.getItem('password')});
     localStorage.setItem('password',this.state.current.value); 
   }
   render() {
@@ -39,14 +40,20 @@ class Home extends React.Component {
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Nombre usuario:</Form.Label>
-                <Form.Control type="text" placeholder="Usuario" ref={this.inputuser}/>
+                <Form.Control 
+                type="text" 
+                placeholder="Usuario" 
+                ref={this.inputuser}/>
                 <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
                 </Form.Text>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Pass" ref={this.inputpass} />
+                <Form.Control 
+                type="password" 
+                placeholder="Pass" 
+                ref={this.inputpass} />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Check me out" />
@@ -61,8 +68,8 @@ class Home extends React.Component {
     }
   }
   componentWillUnmount(){
-    localStorage.setItem('user',this.state.value);
-    localStorage.setItem('password',this.state.current.value); 
+    localStorage.setItem('user',this.state.user);
+    localStorage.setItem('password',this.state.password); 
   }
   
 }
