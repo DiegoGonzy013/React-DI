@@ -6,8 +6,7 @@ import { Usuarios } from '../data/Usuarios';
 class Perfil extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      //this.state = { user: '', password: '' };
+      this.state = {
       NombreUser: Usuarios[0].Nombre,
       PassUser: Usuarios[0].Pass,
       EmailUser: Usuarios[0].Email,
@@ -27,11 +26,11 @@ class Perfil extends React.Component {
     });
   }
   limpiar(){
-    Home.localStorage.removeItem(this.state.NombreUser);
-    Home.localStorage.removeItem(this.state.EmailUser);
-    Home.localStorage.removeItem(this.state.DatospersonalesUser);
-    Home.localStorage.removeItem(this.state.AvatarUser);
-    Home.localStorage.removeItem(this.state.EdadUser);
+    localStorage.removeItem(this.state.NombreUser);
+    localStorage.removeItem(this.state.EmailUser);
+    localStorage.removeItem(this.state.DatospersonalesUser);
+    localStorage.removeItem(this.state.AvatarUser);
+    localStorage.removeItem(this.state.EdadUser);
   }
   render(){
   return( 
@@ -53,7 +52,7 @@ class Perfil extends React.Component {
             </Card.Body>
           </Card>
         </Row>
-        <Button variant="primary" type="button" onClick={this.logout}>
+        <Button variant="primary" type="button" onClick={this.limpiar}>
             Logout
           </Button>
       </Container>
