@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
+import { Usuarios } from '../data/Usuarios';
 
 class Home extends React.Component {
   constructor(props) {
@@ -9,13 +10,58 @@ class Home extends React.Component {
     this.inputuser = React.createRef();
     this.inputpass = React.createRef();
   }
+  checkLogin() {
+    
+    if (Usuarios.map((item) => {item.Nombre == localStorage.getItem('user')&&(item.Pass == localStorage.getItem('password'))})){
+        console.log('nombre correcto');
+        console.log('contraseña correcta');
+        alert("Te has logueado correctamente: " +this.inputuser.current.value);
+    }
+
+    else{
+      alert("No te has podido loguear con este usuario: "  +this.inputuser.current.value);
+    }
+  }
+}
+checkLogin(user,password) {
+  if(logged=false){
+    if(Usuarios.map((item) => {
+    item.Nombre=user})){
+      alert("Te has logueado correctamente: " +user);
+      this.setState({logged: !this.state.logged});
+    }
+    alert("No te puedes loguear " +user);
+  }
+  else{
+    alert("No te puedes loguear " +user);
+  }
+  
+}
+
+login() {
+  
+  this.setState({
+    user: this.inputuser.current.value,
+    password: this.inputpass.current.value,
+  });
+  console.log('login');
+  this.checkLogin(user,password);
+}
+componentDidMount() {
+  this.setState({
+    user: localStorage.getItem('user'),
+    password: localStorage.getItem('password'),
+  });
+}
 
   login() {
+    
     this.setState({
       user: this.inputuser.current.value,
       password: this.inputpass.current.value,
     });
     console.log('login');
+    this.checkLogin()
   }
   componentDidMount() {
     this.setState({
@@ -24,17 +70,17 @@ class Home extends React.Component {
     });
   }
   render() {
-    if (
+    /*if (
       this.state !== null &&
       this.state.user !== null &&
       this.state.user !== ''
     ) {
-      return (
+     return (
         <div className="main-state">
           <h1>Bienvenido {this.state.user}!</h1>
         </div>
       );
-    } else {
+    } else {*/
       return (
         <div className="main-state">
           <h1>Welcome!!!!</h1>
@@ -69,7 +115,7 @@ class Home extends React.Component {
           </Container>
         </div>
       );
-    }
+    //}
   }
   componentWillUnmount() {
     localStorage.setItem('user', this.state.user);

@@ -2,7 +2,6 @@ import React from 'react';
 import Home from './Home';
 import { Card, Container,Row,Button } from 'react-bootstrap';
 import { Usuarios } from '../data/Usuarios';
-import { MenuItems } from '../data/MenuItems';
 
 class Perfil extends React.Component {
   constructor(props) {
@@ -28,11 +27,11 @@ class Perfil extends React.Component {
     });
   }
   limpiar(){
-    localStorage.removeItem(this.state.NombreUser);
-    localStorage.setItem('', this.state.EmailUser);
-    localStorage.setItem('', this.state.DatospersonalesUser);
-    localStorage.setItem('', this.state.AvatarUser);
-    localStorage.setItem('', this.state.EdadUser);
+    Home.localStorage.removeItem(this.state.NombreUser);
+    Home.localStorage.removeItem(this.state.EmailUser);
+    Home.localStorage.removeItem(this.state.DatospersonalesUser);
+    Home.localStorage.removeItem(this.state.AvatarUser);
+    Home.localStorage.removeItem(this.state.EdadUser);
   }
   render(){
   return( 
