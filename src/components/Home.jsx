@@ -10,19 +10,17 @@ class Home extends React.Component {
     this.inputuser = React.createRef();
     this.inputpass = React.createRef();
   }
-  checkLogin() {
+  checkLogin(user,password) {
     
-    if (Usuarios.map((item) => {item.Nombre == localStorage.getItem('user')&&(item.Pass == localStorage.getItem('password'))})){
+    if (Usuarios.map((item) => {item.Nombre == user && item.Pass == password})){
         console.log('nombre correcto');
-        console.log('contraseña correcta');
-        alert("Te has logueado correctamente: " +this.inputuser.current.value);
+        alert("Te has logueado correctamente: " +user);
     }
-
     else{
-      alert("No te has podido loguear con este usuario: "  +this.inputuser.current.value);
+      alert("No te has podido loguear con este usuario: "  +user);
     }
   }
-}
+/*
 checkLogin(user,password) {
   if(logged=false){
     if(Usuarios.map((item) => {
@@ -47,21 +45,14 @@ login() {
   console.log('login');
   this.checkLogin(user,password);
 }
-componentDidMount() {
-  this.setState({
-    user: localStorage.getItem('user'),
-    password: localStorage.getItem('password'),
-  });
-}
-
+*/
   login() {
-    
     this.setState({
       user: this.inputuser.current.value,
       password: this.inputpass.current.value,
     });
     console.log('login');
-    this.checkLogin()
+    this.checkLogin(this.inputuser.current.value,this.inputpass.current.value)
   }
   componentDidMount() {
     this.setState({
