@@ -22,9 +22,6 @@ class Home extends React.Component {
       alert('No te has podido loguear con este usuario: ' + user);
     }
   }
-  enviarDatos() {
-    
-  }
   login() {
     this.setState({
       user: this.inputuser.current.value,

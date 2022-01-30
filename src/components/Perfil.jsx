@@ -6,13 +6,8 @@ import { Usuarios } from '../data/Usuarios';
 class Perfil extends React.Component {
   constructor(props) {
     super(props);
-      this.state = {
-      NombreUser: Usuarios[0].Nombre,
-      PassUser: Usuarios[0].Pass,
-      EmailUser: Usuarios[0].Email,
-      DatospersonalesUser: Usuarios[0].Datospersonales,
-      AvatarUser: Usuarios[0].Avatar,
-      EdadUser: Usuarios[0].Edad,
+      this.state = {user:this.user,
+      pass:this.pass,
     };
   }
   setData(item) {
@@ -26,11 +21,8 @@ class Perfil extends React.Component {
     });
   }
   limpiar(){
-    localStorage.removeItem(this.state.NombreUser);
-    localStorage.removeItem(this.state.EmailUser);
-    localStorage.removeItem(this.state.DatospersonalesUser);
-    localStorage.removeItem(this.state.AvatarUser);
-    localStorage.removeItem(this.state.EdadUser);
+    localStorage.removeItem(this.state.uuser);
+    localStorage.removeItem(this.state.pass);
   }
   render(){
   return( 
@@ -38,16 +30,14 @@ class Perfil extends React.Component {
       <Container>
         <Row>
           <Card style={{ width: '25rem' }}>
-            <Card.Img variant="top" src={this.state.AvatarUser} />
+            <Card.Img variant="top" src='' />
             <Card.Body>
               <Card.Title>
-                Nombre: {this.state.NombreUser}<p />
-                Email: {this.state.EmailUser}<p />
-                Edad: {this.state.EdadUser}
+                Nombre: {localStorage.getItem('user')}<p />
+                Email: {localStorage.getItem('pass'}<p />
               </Card.Title>
               <Card.Text>
                 <p />
-                {this.state.DatospersonalesUser}
               </Card.Text>
             </Card.Body>
           </Card>
