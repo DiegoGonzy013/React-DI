@@ -8,7 +8,7 @@ class Perfil extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      this.state = { user: '', password: '' };
+      //this.state = { user: '', password: '' };
       NombreUser: Usuarios[0].Nombre,
       PassUser: Usuarios[0].Pass,
       EmailUser: Usuarios[0].Email,
