@@ -24,6 +24,7 @@ class Perfil extends React.Component {
     localStorage.removeItem(this.state.uuser);
     localStorage.removeItem(this.state.pass);
   }
+  // Me he vuelto loco intentando para qeu al final no me salga nada , ya me enterare en clase de como es porque estoy muy perdido 
   render(){
   return( 
     <div>
@@ -34,7 +35,11 @@ class Perfil extends React.Component {
             <Card.Body>
               <Card.Title>
                 Nombre: {localStorage.getItem('user')}<p />
-                Email: {localStorage.getItem('pass'}<p />
+                Pass: {localStorage.getItem('password')}<p />
+                Edad:
+                {Usuarios.map(user => {
+                 user.Edad
+                })}
               </Card.Title>
               <Card.Text>
                 <p />
