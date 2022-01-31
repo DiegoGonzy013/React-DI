@@ -38,7 +38,7 @@ class Home extends React.Component {
   }
 
   render() {
-    /*if (
+    if (
       this.state !== null &&
       this.state.user !== null &&
       this.state.user !== ''
@@ -48,7 +48,7 @@ class Home extends React.Component {
           <h1>Bienvenido {this.state.user}!</h1>
         </div>
       );
-    } else {*/
+    } else {
     return (
       <div className="main-state">
         <h1>Welcome!!!!</h1>
@@ -83,7 +83,7 @@ class Home extends React.Component {
         </Container>
       </div>
     );
-    //}
+    }
   }
   componentWillUnmount() {
     localStorage.setItem('user', this.state.user);
