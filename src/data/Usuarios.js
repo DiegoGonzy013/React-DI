@@ -2,13 +2,20 @@ import Home from '../components/Home';
 
 export const Usuarios = [
   {
-    user: 'Diego',
-    password: '1234',
+    id:1,
+    nombre: 'Diego',
+    apellidos: 'Gonzalez',
+    email: 'diego@gmail.com',
     edad: 23,
+    avatar: '',
   },
   {
-    user: 'Oscar',
-    password: '1234',
+    id:2,
+    nombre: 'Oscar',
+    apellidos: 'Gonzalez',
+    email: 'oscar@gmail.com',
     edad: 30,
+    avatar:'',
+
   },
 ];

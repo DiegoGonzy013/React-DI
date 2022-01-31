@@ -5,44 +5,41 @@ import { Usuarios } from '../data/Usuarios';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { user: '', password: '' };
+    this.state = { user: '', password: '' ,id:''};
     this.login = this.login.bind(this);
     this.inputuser = React.createRef();
     this.inputpass = React.createRef();
-  }
-  checkLogin(user, password) {
-    if (
-      Usuarios.map((item) => {
-        item.Nombre == user && item.Pass == password;
-      })
-    ) {
-      console.log('Nombre correcto');
-      alert('Te has logueado correctamente: ' + user);
-    } else {
-      alert('No te has podido loguear con este usuario: ' + user);
-    }
+    this.inputcheck = React.createRef();
   }
   login() {
     this.setState({
+      
       user: this.inputuser.current.value,
       password: this.inputpass.current.value,
     });
-    console.log('login');
-    this.checkLogin(this.inputuser.current.value, this.inputpass.current.value);
+    this.componentWillUnmount()
+  }
+  componentWillUnmount() {
+    {
+      Usuarios.map((item) =>{
+        if(
+          item.email=== this.state.user &&
+          item.pass === this.state.password
+        ){
+          localStorage.setItem('id', item.id);
+        }
+        //alert('Te has logueado correctamente: ' + user);
+      });}
   }
   componentDidMount() {
     this.setState({
-      user: localStorage.getItem('user'),
-      password: localStorage.getItem('password'),
+      id: localStorage.getItem('id')
     });
   }
 
   render() {
-    if (
-      this.state !== null &&
-      this.state.user !== null &&
-      this.state.user !== ''
-    ) {
+    if (localStorage.getItem('id')!==null)
+      {
      return (
         <div className="main-state">
           <h1>Bienvenido {this.state.user}!</h1>
@@ -85,9 +82,6 @@ class Home extends React.Component {
     );
     }
   }
-  componentWillUnmount() {
-    localStorage.setItem('user', this.state.user);
-    localStorage.setItem('password', this.state.password);
-  }
+  
 }
 export default Home;
