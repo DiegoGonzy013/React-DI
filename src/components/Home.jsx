@@ -42,7 +42,7 @@ class Home extends React.Component {
       {
      return (
         <div className="main-state">
-          <h1>Bienvenido {this.state.user}!</h1>
+          <h1>Bienvenido {Usuarios[localStorage.getItem('id')].nombre}!</h1>
         </div>
       );
     } else {
