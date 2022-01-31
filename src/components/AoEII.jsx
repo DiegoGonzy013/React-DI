@@ -13,29 +13,34 @@ class AoEII extends React.Component {
       selectedItem: item,
     });
   };
-  async llamadadatosF1(){
-    
-  }
   async componentDidMount() {
-    const response = await fetch('https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations');
+    const response = await fetch(
+      'https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations',
+      { mode: 'no-cors' }
+    );
     const responseData = await response.json();
-    this.setState({ tableData: responseData, selectedItem: responseData[0] });
+    this.setState({
+      tableData: responseData.civilizations,
+      selectedItem: responseData.civilizations[0],
+    });
   }
 
   render() {
+    console.log(this.state.tableData);
     return (
       <div className="main-site">
-        <h1>Studio Ghibli</h1>
+        <h1>Age of Empires II CIVILIZATIONS</h1>
         <Container>
           <Row>
             <Col lg={8} md={6}>
               <Table responsive striped hover>
                 <thead>
                   <tr>
-                    <th>Titulo </th>
-                    <th>Director</th>
-                    <th>Año</th>
-                    <th>Puntuación</th>
+                    <th>Nombre</th>
+                    <th>Ejercito</th>
+                    <th>Unidad</th>
+                    <th>Tecnologia</th>
+                    <th>Bonus</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -45,10 +50,10 @@ class AoEII extends React.Component {
                         key={uuid()}
                         onClick={() => this.changeSelected(item)}
                       >
-                        <td>{item.title}</td>
-                        <td>{item.director}</td>
-                        <td>{item.release_date}</td>
-                        <td>{item.rt_score}</td>
+                        <td>{item.name}</td>
+                        <td>{item.army_type}</td>
+                        <td>{item.unique_unit}</td>
+                        <td>{item.team_bonus}</td>
                       </tr>
                     );
                   })}
@@ -58,18 +63,22 @@ class AoEII extends React.Component {
             <Col lg={4} md={6}>
               {/*<PGhibli data={this.state.selectedItem}/>*/}
               <Card style={{ width: '16rem' }}>
-                <Card.Img variant="top" src={this.state.selectedItem.image} />
+                <Card.Img
+                  variant="top"
+                  src={this.state.selectedItem.unique_unit}
+                />
                 <Card.Body>
                   <Card.Title>
-                    Titulo: {this.state.selectedItem.title}
+                    Civilizacion: {this.state.selectedItem.name}
                     <p />
                   </Card.Title>
                   <Card.Text>
-                    Director: {this.state.selectedItem.director}
+                    Tipo de ejercito: {this.state.selectedItem.army_type}
                     <p />
-                    Año: {this.state.selectedItem.release_date}
+                    Team bonus: {this.state.selectedItem.team_bonus}
                     <p />
-                    Puntuacion: {this.state.selectedItem.rt_score}
+                    Bonus civilizacion:{' '}
+                    {this.state.selectedItem.civilization_bonus}
                   </Card.Text>
                 </Card.Body>
               </Card>
