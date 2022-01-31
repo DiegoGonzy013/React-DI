@@ -19,8 +19,7 @@ class Universidad extends React.Component {
     );
     const responseData = await response.json();
     this.setState({
-      tableData: responseData,
-      selectedItem: responseData[0],
+      tableData: responseData,selectedItem: responseData[0],
     });
   }
   /*  tableData: responseData.civilizations,

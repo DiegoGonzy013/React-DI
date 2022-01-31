@@ -53,7 +53,6 @@ class PelisGhibli extends React.Component {
               </Table>
             </Col>
             <Col lg={4} md={6}>
-              {/*<PGhibli data={this.state.selectedItem}/>*/}
               <Card style={{ width: '16rem' }}>
                 <Card.Img variant="top" src={this.state.selectedItem.image} />
                 <Card.Body>
