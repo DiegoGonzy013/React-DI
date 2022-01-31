@@ -3,7 +3,7 @@ import uuid from 'react-uuid';
 import { Container, Table, Row, Col, Card } from 'react-bootstrap';
 //import PGhibli from './PGhibli';
 
-class AoEII extends React.Component {
+class Universidad extends React.Component {
   constructor(props) {
     super(props);
     this.state = { selectedItem: '', tableData: [] };
@@ -15,21 +15,22 @@ class AoEII extends React.Component {
   };
   async componentDidMount() {
     const response = await fetch(
-      'https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations',
-      { mode: 'no-cors' }
+      'https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json'
     );
     const responseData = await response.json();
     this.setState({
-      tableData: responseData.civilizations,
-      selectedItem: responseData.civilizations[0],
+      tableData: responseData,
+      selectedItem: responseData[0],
     });
   }
+  /*  tableData: responseData.civilizations,
+      selectedItem: responseData.civilizations[0],*/
 
   render() {
     console.log(this.state.tableData);
     return (
       <div className="main-site">
-        <h1>Age of Empires II CIVILIZATIONS</h1>
+        <h1>Universidades</h1>
         <Container>
           <Row>
             <Col lg={8} md={6}>
@@ -37,10 +38,7 @@ class AoEII extends React.Component {
                 <thead>
                   <tr>
                     <th>Nombre</th>
-                    <th>Ejercito</th>
-                    <th>Unidad</th>
-                    <th>Tecnologia</th>
-                    <th>Bonus</th>
+                    <th>Nivel</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -51,9 +49,10 @@ class AoEII extends React.Component {
                         onClick={() => this.changeSelected(item)}
                       >
                         <td>{item.name}</td>
-                        <td>{item.army_type}</td>
-                        <td>{item.unique_unit}</td>
-                        <td>{item.team_bonus}</td>
+                        <td>{item.country}</td>
+                        <td>{item.alpha_two_code}</td>
+                        <td>{item.state-province}</td>
+                        <td>{item.domains}</td>
                       </tr>
                     );
                   })}
@@ -89,4 +88,4 @@ class AoEII extends React.Component {
     );
   }
 }
-export default AoEII;
+export default Universidad;

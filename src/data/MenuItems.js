@@ -38,9 +38,9 @@ export const MenuItems = [
   },
   {
     id: 6,
-    path: '/aoeII',
-    title: 'Age of Empires II',
-    component: AoEII,
+    path: '/universidad',
+    title: 'Universidad',
+    component: Universidad,
   },
 ];
 
