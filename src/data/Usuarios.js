@@ -2,7 +2,7 @@ import Home from '../components/Home';
 
 export const Usuarios = [
   {
-    id:1,
+    id:0,
     nombre: 'Diego',
     apellidos: 'Gonzalez',
     email: 'diego@gmail.com',
@@ -10,7 +10,7 @@ export const Usuarios = [
     avatar: '',
   },
   {
-    id:2,
+    id:1,
     nombre: 'Oscar',
     apellidos: 'Gonzalez',
     email: 'oscar@gmail.com',

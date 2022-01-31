@@ -6,7 +6,7 @@ import { Usuarios } from '../data/Usuarios';
 class Perfil extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { user: '', apellidos: '', email: '', edad: '', avatar: '' };
+    this.state = {id:'', user: '', apellidos: '', email: '', edad: '', avatar: '' };
   }
   componentDidMount() {
     if (localStorage.getItem('id') !== null) {
@@ -20,8 +20,8 @@ class Perfil extends React.Component {
     }
   }
   limpiar() {
-    localStorage.clear(this);
-    //removeItem
+    localStorage.removeItem(this.id);
+    //clear(this)
   }
   // Me he vuelto loco intentando para qeu al final no me salga nada , ya me enterare en clase de como es porque estoy muy perdido
   render() {

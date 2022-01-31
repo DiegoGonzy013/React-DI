@@ -3,6 +3,7 @@ import { PaginaListas } from '../components/PaginaListas';
 import Perfil from '../components/Perfil';
 import F1 from '../components/F1';
 import PelisGhibli from '../components/PelisGhibli';
+import AoEII from '../components/AoEII';
 
 export const MenuItems = [
   {
@@ -34,6 +35,12 @@ export const MenuItems = [
     path: '/ghibli',
     title: 'Ghibli',
     component: PelisGhibli,
+  },
+  {
+    id: 6,
+    path: '/aoeII',
+    title: 'Age of Empires II',
+    component: AoEII,
   },
 ];
 
