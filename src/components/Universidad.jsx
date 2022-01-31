@@ -38,7 +38,9 @@ class Universidad extends React.Component {
                 <thead>
                   <tr>
                     <th>Nombre</th>
-                    <th>Nivel</th>
+                    <th>Pais</th>
+                    <th>Siglas pais</th>
+                    <th>Dominio</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -51,7 +53,6 @@ class Universidad extends React.Component {
                         <td>{item.name}</td>
                         <td>{item.country}</td>
                         <td>{item.alpha_two_code}</td>
-                        <td>{item.state-province}</td>
                         <td>{item.domains}</td>
                       </tr>
                     );
@@ -64,20 +65,19 @@ class Universidad extends React.Component {
               <Card style={{ width: '16rem' }}>
                 <Card.Img
                   variant="top"
-                  src={this.state.selectedItem.unique_unit}
+                  src=''
                 />
                 <Card.Body>
                   <Card.Title>
-                    Civilizacion: {this.state.selectedItem.name}
+                    Universidad: {this.state.selectedItem.name}
                     <p />
                   </Card.Title>
                   <Card.Text>
-                    Tipo de ejercito: {this.state.selectedItem.army_type}
+                    Pais: {this.state.selectedItem.country}
                     <p />
-                    Team bonus: {this.state.selectedItem.team_bonus}
+                    Siglas: {this.state.selectedItem.alpha_two_code}
                     <p />
-                    Bonus civilizacion:{' '}
-                    {this.state.selectedItem.civilization_bonus}
+                    Dominio:{this.state.selectedItem.domains}
                   </Card.Text>
                 </Card.Body>
               </Card>

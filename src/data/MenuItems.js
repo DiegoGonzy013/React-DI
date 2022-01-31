@@ -3,7 +3,7 @@ import { PaginaListas } from '../components/PaginaListas';
 import Perfil from '../components/Perfil';
 import F1 from '../components/F1';
 import PelisGhibli from '../components/PelisGhibli';
-import AoEII from '../components/AoEII';
+import Universidad from '../components/Universidad';
 
 export const MenuItems = [
   {
@@ -38,8 +38,8 @@ export const MenuItems = [
   },
   {
     id: 6,
-    path: '/universidad',
-    title: 'Universidad',
+    path: '/universidades',
+    title: 'Universidades',
     component: Universidad,
   },
 ];
