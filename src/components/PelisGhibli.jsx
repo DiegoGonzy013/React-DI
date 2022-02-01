@@ -13,10 +13,10 @@ class PelisGhibli extends React.Component {
       selectedItem: item,
     });
   };
-  async componentDidMount() {
+  async componentDidMount() {   //sincronizamos con la api
     const response = await fetch('https://ghibliapi.herokuapp.com/films');
     const responseData = await response.json();
-    this.setState({ tableData: responseData, selectedItem: responseData[0] });
+    this.setState({ tableData: responseData, selectedItem: responseData[0] }); // asignamos los datos del estado , los que recojemos de al api y hemos clicado en el 
   }
 
   render() {

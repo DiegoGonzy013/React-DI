@@ -7,7 +7,7 @@ class Perfil extends React.Component {
     super(props);
     this.state = {user: '', apellidos: '', email: '', edad: '', avatar: '' };
   }
-  componentDidMount() {
+  componentDidMount() {  // le da los valores de Usuarios a los estados mediante la id y localStorage
     if (localStorage.getItem('id') !== null) {
       this.setState({
         user: Usuarios[localStorage.getItem('id')].nombre,
@@ -18,12 +18,12 @@ class Perfil extends React.Component {
       });
     }
   }
-  limpiar() {
+  limpiar() {  // limpiarmos el local storage para desloguearse
     localStorage.clear(this);
     //removeItem(this.id)
   }
   render() {
-    if (localStorage.getItem('id') !== null) {
+    if (localStorage.getItem('id') !== null) { // si la id no esta asignada , no se muestra la interfaz de los datos
       return (
         <div>
           <Container>
