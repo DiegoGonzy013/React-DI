@@ -4,6 +4,7 @@ import Perfil from '../components/Perfil';
 import F1 from '../components/F1';
 import PelisGhibli from '../components/PelisGhibli';
 import Universidad from '../components/Universidad';
+import StarWars from '../components/StarWars';
 
 export const MenuItems = [
   {
@@ -41,6 +42,12 @@ export const MenuItems = [
     path: '/universidades',
     title: 'Universidades',
     component: Universidad,
+  },
+  {
+    id: 7,
+    path: '/StarWars',
+    title: 'StarWars SpaceShips',
+    component: StarWars,
   },
 ];
 

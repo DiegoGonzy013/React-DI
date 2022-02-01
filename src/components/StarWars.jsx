@@ -1,9 +1,8 @@
 import React from 'react';
 import uuid from 'react-uuid';
 import { Container, Table, Row, Col, Card } from 'react-bootstrap';
-//import PGhibli from './PGhibli';
 
-class Universidad extends React.Component {
+class StarWars extends React.Component {
   constructor(props) {
     super(props);
     this.state = { selectedItem: '', tableData:[] };
@@ -15,12 +14,12 @@ class Universidad extends React.Component {
   };
   async componentDidMount() {
     const response = await fetch(
-      'https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json'
+      'https://swapi.dev/api/starships/?format=json'
     );
     const responseData = await response.json();
     this.setState({
-      tableData: responseData.slice(0, 50)
-      ,selectedItem: responseData[0],
+      tableData: responseData.results
+      ,selectedItem: responseData.results[0],
     });
   }
   /*  tableData: responseData.civilizations,
@@ -30,17 +29,17 @@ class Universidad extends React.Component {
     console.log(this.state.tableData);
     return (
       <div className="main-site">
-        <h1>Universidades</h1>
+        <h1>StarWars StarShips</h1>
         <Container>
           <Row>
-            <Col lg={8} md={6}>
+            <Col lg={8} md={4}>
               <Table responsive striped hover>
                 <thead>
                   <tr>
                     <th>Nombre</th>
-                    <th>Pais</th>
-                    <th>Siglas pais</th>
-                    <th>Dominio</th>
+                    <th>Modelo</th>
+                    <th>Creador</th>
+                    <th>Tripulacion</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -51,17 +50,16 @@ class Universidad extends React.Component {
                         onClick={() => this.changeSelected(item)}
                       >
                         <td>{item.name}</td>
-                        <td>{item.country}</td>
-                        <td>{item.alpha_two_code}</td>
-                        <td>{item.domains}</td>
+                        <td>{item.model}</td>
+                        <td>{item.manufacturer}</td>
+                        <td>{item.crew}</td>
                       </tr>
                     );
                   })}
                 </tbody>
               </Table>
             </Col>
-            <Col lg={4} md={6}>
-              {/*<PGhibli data={this.state.selectedItem}/>*/}
+            <Col lg={4} md={8}>
               <Card style={{ width: '16rem' }}>
                 <Card.Img
                   variant="top"
@@ -69,15 +67,14 @@ class Universidad extends React.Component {
                 />
                 <Card.Body>
                   <Card.Title>
-                    Universidad: {this.state.selectedItem.name}
-                    <p />
+                    Nombre: {this.state.selectedItem.name} <br />
                   </Card.Title>
                   <Card.Text>
-                    Pais: {this.state.selectedItem.country}
-                    <p />
-                    Siglas: {this.state.selectedItem.alpha_two_code}
-                    <p />
-                    Dominio:{this.state.selectedItem.domains}
+                    Coste(Creditos Star Wars): {this.state.selectedItem.cost_in_credits}<br />
+
+                    Longitud: {this.state.selectedItem.length}
+                    <br />
+                    Clase: {this.state.selectedItem.starship_class}
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -88,4 +85,4 @@ class Universidad extends React.Component {
     );
   }
 }
-export default Universidad;
+export default StarWars;
