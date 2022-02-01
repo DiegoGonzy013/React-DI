@@ -2,9 +2,20 @@ import React from 'react';
 import { Card, Container, Table, Row, Col } from 'react-bootstrap';
 import { GranPremios, DatosCircuitos } from '../data/DatosF1';
 
-class Coches extends React.Component {
+class F1 extends React.Component {
   constructor(props) {
     super(props);
+  // con selected item , datos tabla recoje   
+  /*class Coches extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { selectedItem: DatosTablaCoches[0] };
+  }
+
+  changeSelected = (item) => {
+    this.setState({ selectedItem: item });
+  };*/
+
     this.state = {
       CircuitoClick: DatosCircuitos[0].Circuito,
       PaisClick: DatosCircuitos[0].Pais,
@@ -78,4 +89,4 @@ class Coches extends React.Component {
     );
   }
 }
-export default Coches;
+export default F1;
