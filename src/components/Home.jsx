@@ -5,7 +5,7 @@ import { Usuarios } from '../data/Usuarios';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { id: '', user: '', password: '' };
+    this.state = {user: '', password: '',id: '' };
     this.login = this.login.bind(this);
     this.inputuser = React.createRef();
     this.inputpass = React.createRef();
@@ -20,7 +20,7 @@ class Home extends React.Component {
   componentWillUnmount() {
       {Usuarios.map((item) => {
           if (
-            item.email === this.state.user &&
+            item.nombre === this.state.user &&
             item.pass === this.state.password
           ) {
             localStorage.setItem('id', item.id);

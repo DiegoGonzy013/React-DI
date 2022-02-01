@@ -1,12 +1,11 @@
 import React from 'react';
-import Home from './Home';
 import { Card, Container, Row, Button } from 'react-bootstrap';
 import { Usuarios } from '../data/Usuarios';
 
 class Perfil extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {id:'', user: '', apellidos: '', email: '', edad: '', avatar: '' };
+    this.state = {user: '', apellidos: '', email: '', edad: '', avatar: '' };
   }
   componentDidMount() {
     if (localStorage.getItem('id') !== null) {
@@ -20,10 +19,9 @@ class Perfil extends React.Component {
     }
   }
   limpiar() {
-    localStorage.removeItem(this.id);
-    //clear(this)
+    localStorage.clear(this);
+    //removeItem(this.id)
   }
-  // Me he vuelto loco intentando para qeu al final no me salga nada , ya me enterare en clase de como es porque estoy muy perdido
   render() {
     if (localStorage.getItem('id') !== null) {
       return (
@@ -31,17 +29,14 @@ class Perfil extends React.Component {
           <Container>
             <Row>
               <Card style={{ width: '25rem' }}>
-                <Card.Img variant="top" src="" />
+                <Card.Img variant="top" src={this.state.avatar}/>
                 <Card.Body>
                   <Card.Title>
-                    Nombre: {localStorage.getItem('user')}
+                    Nombre: {this.state.user}
                     <p />
-                    Pass: {localStorage.getItem('password')}
+                    Email: {this.state.email}
                     <p />
-                    Edad:
-                    {Usuarios.map((user) => {
-                      user.Edad;
-                    })}
+                    Edad: {this.state.edad}
                   </Card.Title>
                   <Card.Text>
                     <p />
