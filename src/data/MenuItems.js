@@ -5,6 +5,7 @@ import F1 from '../components/F1';
 import PelisGhibli from '../components/PelisGhibli';
 import Universidad from '../components/Universidad';
 import StarWars from '../components/StarWars';
+import RugbyTable from '../components/RugbyTable';
 
 export const MenuItems = [
   {
@@ -48,6 +49,12 @@ export const MenuItems = [
     path: '/StarWars',
     title: 'StarWars SpaceShips',
     component: StarWars,
+  },
+  {
+    id: 8,
+    path: '/rugby',
+    title: 'Rugby',
+    component: RugbyTable,
   },
 ];
 
